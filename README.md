@@ -174,13 +174,11 @@ Outputs: Elaborate database updated in mapped library if successful, generates r
 
 After elaboration the file will come under snapshot. Select the test bench and simulate it.
 
-![Screenshot 2025-04-29 150912](https://github.com/user-attachments/assets/075ce63f-2330-4225-b005-844b10d96e6a)
+![Screenshot 2025-04-29 150942](https://github.com/user-attachments/assets/6b1947cb-bbf8-4578-9a72-d5ed284359cf)
+
 
 
 ## Fig 8: Elaboration Launch Option
-
-![Screenshot 2025-04-29 150942](https://github.com/user-attachments/assets/9be1fec3-3eb6-4002-bd25-0daf97880e11)
-
 
 ## Step 3: Simulation: 
 
@@ -194,7 +192,9 @@ Simulation allow to dump design and test bench signals into a waveform
 
 Steps for simulation – Run the simulation command with simulator options
 
-![Screenshot 2025-04-29 151016](https://github.com/user-attachments/assets/63b3f8a2-d685-4e96-9028-8e6a3cd761cc)
+![Screenshot 2025-04-29 151016](https://github.com/user-attachments/assets/5f7ef181-7918-41ae-a15c-c4500212e4a2)
+
+
 
 
 ## Fig 9: Design Browser window for simulation
@@ -204,7 +204,9 @@ Steps for simulation – Run the simulation command with simulator options
 
 ## Fig 10:Simulation Waveform Window
 
-![Screenshot 2025-04-29 151230](https://github.com/user-attachments/assets/fba4a5f0-9e2d-45b4-8950-991ae2db3e8f)
+![Screenshot 2025-04-29 151230](https://github.com/user-attachments/assets/153a4c22-2cd2-4995-ae06-4356a1467e27)
+
+
 
 
 ## Fig 11:Simulation Waveform Window
