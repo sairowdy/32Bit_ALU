@@ -34,7 +34,39 @@ A Blank Document opens up into which the following source code can be typed down
 
 ## Source Code – Using Case Statement :
 
-(Include program here)
+ input  [3:0] A, B,
+
+input  [2:0] ALU_Sel,
+
+output reg [3:0] ALU_Out,
+
+output reg CarryOut
+
+always @(*) begin
+
+    case (ALU_Sel)
+    
+        3'b000: {CarryOut, ALU_Out} = A + B;
+        
+        3'b001: {CarryOut, ALU_Out} = A - B;
+        
+        3'b010: ALU_Out = A & B;
+        
+        3'b011: ALU_Out = A | B;
+        
+        3'b100: ALU_Out = A ^ B;
+        
+        3'b101: ALU_Out = ~A;
+        
+        3'b110: ALU_Out = A << 1;
+        
+        3'b111: ALU_Out = A >> 1;
+        
+        default: ALU_Out = 4'b0000;
+    
+    endcase
+
+end
 
 Use Save option or Ctrl+S to save the code or click on the save option from the top most right corner and close the text file.
 
@@ -44,7 +76,49 @@ Similarly, create your test bench using gedit <filename_tb>.v or <filename_tb>.v
 
 ## Test Bench :
 
-(Include test bench program here)
+reg [3:0] A, B;
+
+reg [2:0] ALU_Sel;
+
+wire [3:0] ALU_Out;
+
+wire CarryOut;
+
+ALU uut (
+
+    .A(A),
+    
+    .B(B),
+    
+    .ALU_Sel(ALU_Sel),
+    
+    .ALU_Out(ALU_Out),
+    
+    .CarryOut(CarryOut)
+
+);
+
+initial begin
+
+    A = 4'b0101; B = 4'b0011; ALU_Sel = 3'b000; #10;
+    
+    A = 4'b0101; B = 4'b0011; ALU_Sel = 3'b001; #10;
+    
+    A = 4'b1100; B = 4'b1010; ALU_Sel = 3'b010; #10;
+    
+    A = 4'b1100; B = 4'b1010; ALU_Sel = 3'b011; #10;
+    
+    A = 4'b1100; B = 4'b1010; ALU_Sel = 3'b100; #10;
+    
+    A = 4'b1100; B = 4'b1010; ALU_Sel = 3'b101; #10;
+    
+    A = 4'b0011; B = 4'b0000; ALU_Sel = 3'b110; #10;
+    
+    A = 4'b0011; B = 4'b0000; ALU_Sel = 3'b111; #10;
+    
+    $finish;
+
+end
 
 Use Save option or Ctrl+S to save the code or click on the save option from the top most right corner and close the text file.
 
@@ -192,24 +266,10 @@ Simulation allow to dump design and test bench signals into a waveform
 
 Steps for simulation – Run the simulation command with simulator options
 
-![Screenshot 2025-04-29 151016](https://github.com/user-attachments/assets/5f7ef181-7918-41ae-a15c-c4500212e4a2)
+![image](https://github.com/user-attachments/assets/fc9f54a8-1ab7-4612-8fc6-f1dfce2a0bbb)
 
 
-
-
-## Fig 9: Design Browser window for simulation
-
-![Screenshot 2025-04-29 151201](https://github.com/user-attachments/assets/ebdb579a-dcf7-467f-a72c-78ec54d0be41)
-
-
-## Fig 10:Simulation Waveform Window
-
-![Screenshot 2025-04-29 151230](https://github.com/user-attachments/assets/153a4c22-2cd2-4995-ae06-4356a1467e27)
-
-
-
-
-## Fig 11:Simulation Waveform Window
+## Fig 09:Simulation Waveform Window
 
 ![Screenshot 2025-04-29 151300](https://github.com/user-attachments/assets/a7b6ce05-dbc2-4ce5-b462-ed66a6a5f547)
 
